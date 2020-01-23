@@ -1,0 +1,110 @@
+
+
+{% extends 'routine_admin/dashboard.html' %}
+
+
+
+{% block content %}
+
+
+
+
+
+
+
+
+
+
+
+          <!-- Page Heading -->
+          <h1 class="h3 mb-2 text-gray-800 text-center">All Time Schedule</h1>
+
+          <p class="text-center">
+                {% include 'partial/_alerts.html' %}
+              </p>
+
+         
+         
+
+          <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">DataTables for Time Schedule</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered table-striped text-center" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Time</th>
+                      
+                     
+                    
+                  
+                     
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                        <th>Time</th>
+                       
+                       
+                       
+                      
+                      </tr>
+                    </tr>
+                  </tfoot>
+
+
+                  <tbody>
+
+                    {% for time in all_times %}
+
+                    <tr>
+                      <td>{{time.time_days}}</td>
+                      
+                    
+
+                      
+                     
+                    </tr>
+                    {% endfor %}
+
+
+
+                  
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+
+
+
+
+
+
+
+
+
+
+
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+          </a>
+        
+
+
+{% endblock %}
+
+
+
+
+
+
+
+

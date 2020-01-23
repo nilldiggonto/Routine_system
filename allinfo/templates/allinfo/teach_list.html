@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<div class="jumbotron">
+        <h1 class="display-3 text-center">Department memeber!</h1>
+        <p class="text-center">All the faculty member</p>
+        <hr class="my-4">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-6 offset-md-3">
+                        <form class="text-center" action="" method="GET">
+                                <div class="form-group">
+                                        <!-- <label class="col-form-label" for="inputDefault">Type Initial</label> -->
+                                        <input name="q" type="text" class="form-control" placeholder="type specific teacher initial" id="inputDefault">
+                                      </div>
+                
+                
+                                   
+                
+                
+                                      <button class="btn btn-success" type="submit"><i class="fas fa-search"></i> Search</button>
+                        </form>
+                </div>
+            </div>
+        </div>
+     
+      
+      </div>
+
+
+      <div class="container mt-5 mb-5">
+            <div class="row">
+                    {% if object_list %}
+                    {% for teacher in object_list %}
+                
+
+                                      <div class="col-md-3 mt-4 mb-5">
+                                              <div class="card text-center" >
+                                                      <img class="" src="{{teacher.image.url}}" alt="Card image" style="max-width:100%; height:250px;">
+                                                      <div class="card-body">
+                                                        <h4 class="card-title">{{teacher.name}}</h4>
+                                                        <p class="card-text">{{teacher.description}}</p>
+                                                        <a href="{{teacher.get_absolute_url}}" class="btn btn-primary">See Profile</a>
+                                                      </div>
+                                                  </div>
+                                          </div>
+
+
+                                          {% endfor %}
+                                          {% endif %}
+            </div>
+        </div>
+
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+
+<div class="container mt-3 mb-5">
+        <div class="row">
+
+                {% if all_dept %}
+                {% for dept in all_dept %}
+
+            <div class="col-md-4 mt-4 mb-4">
+                <div class="card text-center bg-info text-white">
+                    <div class="card-header">
+                        <h4> <i class="fas fa-book-reader"></i> {{dept.title}}</h4>
+                    </div>
+                    <div class="card-body">
+                        <p><i class="fas fa-graduation-cap fa-4x"></i></p>
+                        <h5>{{dept.name}}</h5>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{{dept.get_absolute_url}}" class="btn btn-warning">All Member</a>
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+        {% endif %}
+                       
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

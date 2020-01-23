@@ -1,0 +1,122 @@
+
+
+{% extends 'routine_admin/dashboard.html' %}
+
+
+
+{% block content %}
+
+
+
+
+
+
+
+
+
+
+
+          <!-- Page Heading -->
+          <h1 class="h3 mb-2 text-gray-800 text-center">All Routine with Room No</h1>
+
+          <p class="text-center">
+                {% include 'partial/_alerts.html' %}
+              </p>
+
+          <p class="text-center">
+            <a href="{% url 'admin_page:admin-room-create' %}" class="btn btn-primary text-center mt-2 mb-2">Add New Routine</a>
+          </p>
+         
+
+          <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">DataTables for All Room</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered table-striped text-center" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>teacher_initial</th>
+                      <th>routine_days</th>
+                      <th>routine_time</th>
+                      <th>room_no</th>
+                     
+                      <th></th>
+                  
+                     
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>teacher_initial</th>
+                      <th>routine_days</th>
+                      <th>routine_time</th>
+                      <th>room_no</th>
+                       
+                        <th></th>
+                      
+                      </tr>
+                    </tr>
+                  </tfoot>
+
+
+                  <tbody>
+
+                    {% for routine in all_routine %}
+
+                    <tr>
+                      <td>{{routine.teacher_initial}}</td>
+                      <td>{{routine.routine_days}}</td>
+                      <td>{{routine.routine_time}}</td>
+                      <td>{{routine.room_no}}</td>
+
+                      <td>
+                          <a href="{{routine.get_absolute_url}}" class="btn btn-success btn-sm">Edit</a>
+                          <a href="{{routine.delete_get_absolute_url}}" class="btn btn-danger btn-sm">Delete</a>
+                      </td>
+
+                      
+                     
+                    </tr>
+                    {% endfor %}
+
+
+
+                  
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+
+
+
+
+
+
+
+
+
+
+
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+          </a>
+        
+
+
+{% endblock %}
+
+
+
+
+
+
+
+

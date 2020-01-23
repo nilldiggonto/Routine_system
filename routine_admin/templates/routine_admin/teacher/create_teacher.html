@@ -1,0 +1,84 @@
+
+
+{% extends 'routine_admin/dashboard.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+
+
+
+
+
+
+
+
+
+
+          <!-- Page Heading -->
+          
+
+         
+
+          <p class="text-center">
+            {% include 'partial/_alerts.html' %}
+          </p>
+         
+
+          <!-- DataTales Example -->
+         <div class="card text-center">
+
+          <div class="card-header">
+            <h4>Add new Teacher info</h4>
+          </div>
+          <div class="card-body">
+
+              <div class="row">
+                <div class="col-md-6 offset-md-3">
+
+                    <form method="POST" enctype='multipart/form-data' >
+                        {% csrf_token %}
+
+                        {{form|crispy}}
+                      
+          
+                          <input type="submit" class="btn btn-success" value="{{value}}">
+                      </form>
+          
+                </div>
+              </div>
+          
+
+          </div>
+         </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+
+
+
+
+
+
+
+
+
+
+
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+          </a>
+        
+
+
+{% endblock %}
+
+
+
+
+
+
+
+

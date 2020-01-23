@@ -1,0 +1,95 @@
+{% csrf_token %}
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <span>Department Name:</span>
+                            </div>
+                          </div>
+
+                          <select class="form-control" id="sel1" name="depart">
+
+                            {% if all_dept %}
+                            {% for dept in all_dept %}
+                                <option value="{{dept.title}}">{{dept.title}}</option>
+                                
+                              
+                              {% endfor %}
+
+                              {% endif %}
+                            </select>
+                          <!-- <input name="title" type="text" class="form-control" placeholder="Department Title" value="{{instance.title}}"> -->
+                        </div>
+          
+          
+          
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text">
+                              <span>Teacher initial:</span>
+                              </div>
+                            </div>
+                            <input name="ihitial" type="text" class="form-control" placeholder="Department FUll Name" value="{{instance.name}}">
+                          </div>
+
+
+
+                          <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <div class="input-group-text">
+                                  <span>Teacher fullname:</span>
+                                  </div>
+                                </div>
+                                <input name="fullname" type="text" class="form-control" placeholder="Department FUll Name" value="{{instance.name}}">
+                              </div>
+
+
+
+                              <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                      <div class="input-group-text">
+                                      <span>Image:</span>
+                                      </div>
+                                    </div>
+                                    <input name="image" type="file" class="form-control" placeholder="Department FUll Name" value="{{instance.name}}">
+                                  </div>
+
+
+                                  <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                          <div class="input-group-text">
+                                          <span>Designation:</span>
+                                          </div>
+                                        </div>
+                                        <input name="designation" type="text" class="form-control" placeholder="Department FUll Name" value="{{instance.name}}">
+                                      </div>
+
+
+                                      <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                              <div class="input-group-text">
+                                              <span>Faculty:</span>
+                                              </div>
+                                            </div>
+                                            <input name="faculty" type="text" class="form-control" placeholder="Department FUll Name" value="{{instance.name}}">
+                                          </div>
+
+
+                                          <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                  <div class="input-group-text">
+                                                  <span>Email:</span>
+                                                  </div>
+                                                </div>
+                                                <input name="email" type="mail" class="form-control" placeholder="Department FUll Name" value="{{instance.name}}">
+                                              </div>
+
+
+                                              <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                      <div class="input-group-text">
+                                                      <span>Phone:</span>
+                                                      </div>
+                                                    </div>
+                                                    <input name="phone" type="text" class="form-control" placeholder="Department FUll Name" value="{{instance.name}}">
+                                                  </div>
+          

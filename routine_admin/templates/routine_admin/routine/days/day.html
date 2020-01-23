@@ -1,0 +1,110 @@
+
+
+{% extends 'routine_admin/dashboard.html' %}
+
+
+
+{% block content %}
+
+
+
+
+
+
+
+
+
+
+
+          <!-- Page Heading -->
+          <h1 class="h3 mb-2 text-gray-800 text-center">All Days</h1>
+
+          <p class="text-center">
+                {% include 'partial/_alerts.html' %}
+              </p>
+
+         
+         
+
+          <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">DataTables for Weeks</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered table-striped text-center" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Day</th>
+                      
+                     
+                    
+                  
+                     
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                        <th>Day</th>
+                       
+                       
+                       
+                      
+                      </tr>
+                    </tr>
+                  </tfoot>
+
+
+                  <tbody>
+
+                    {% for day in all_days %}
+
+                    <tr>
+                      <td>{{day.days}}</td>
+                      
+                    
+
+                      
+                     
+                    </tr>
+                    {% endfor %}
+
+
+
+                  
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+
+
+
+
+
+
+
+
+
+
+
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+          </a>
+        
+
+
+{% endblock %}
+
+
+
+
+
+
+
+

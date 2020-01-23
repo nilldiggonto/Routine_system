@@ -1,0 +1,115 @@
+
+
+{% extends 'routine_admin/dashboard.html' %}
+
+
+
+{% block content %}
+
+
+
+
+
+
+
+
+
+
+
+          <!-- Page Heading -->
+          <h1 class="h3 mb-2 text-gray-800 text-center">All Department Name</h1>
+
+          <p class="text-center">
+                {% include 'partial/_alerts.html' %}
+              </p>
+
+          <p class="text-center">
+            <a href="{% url 'admin_page:admin-dept-create' %}" class="btn btn-primary text-center mt-2 mb-2">Add new department</a>
+          </p>
+         
+
+          <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">DataTables for department</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered table-striped text-center" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Title</th>
+                      <th>Full Name</th>
+                     
+                      <th></th>
+                  
+                     
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                        <th>Title</th>
+                        <th>Full Name</th>
+                       
+                        <th></th>
+                      
+                      </tr>
+                    </tr>
+                  </tfoot>
+
+
+                  <tbody>
+
+                    {% for dept in all_dept %}
+
+                    <tr>
+                      <td>{{dept.title}}</td>
+                      <td>{{dept.name}}</td>
+                      <td>
+                          <a href="{{dept.admin_absolute_url}}" class="btn btn-success btn-sm">Edit</a>
+                          <a href="{{dept.admin_dept_delete}}" class="btn btn-danger btn-sm">Delete</a>
+                      </td>
+
+                      
+                     
+                    </tr>
+                    {% endfor %}
+
+
+
+                  
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+
+
+
+
+
+
+
+
+
+
+
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+          </a>
+        
+
+
+{% endblock %}
+
+
+
+
+
+
+
+

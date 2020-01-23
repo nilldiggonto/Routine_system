@@ -1,0 +1,410 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+
+
+
+
+
+<div class="jumbotron" style="margin-bottom:0px !important;">
+    <div class="card">
+            <div class="card-header text-center">
+                <h4>{{object.name}}</h4>
+                <p>{{object.description}}</p>
+                
+            </div>
+        </div>
+
+        <hr>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-4">
+                    <div class="profile-img">
+                      {% if object.image %}
+                            <img src="{{object.image.url}}" style="max-width:100%; " alt=""/>
+                            {% else %}
+                            <h4>No image</h4>
+                            {% endif %}
+                            <p class="proile-rating text-center bg-info text-white p-3">Teacher initial : <span>{{object.name_initial}}</span></p>
+                           
+                        </div>
+            </div>
+
+            <div class="col-md-8">
+                    <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                              <a class="nav-link active btn btn-info" data-toggle="tab" href="#home">About</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link btn btn-success" data-toggle="tab" href="#profile">saturday</a>
+                            </li>
+
+                            <li class="nav-item">
+                                    <a class="nav-link btn btn-warning" data-toggle="tab" href="#sunday">sunday</a>
+                                  </li>
+
+                                  <li class="nav-item">
+                                        <a class="nav-link btn btn-danger" data-toggle="tab" href="#monday">monday</a>
+                                      </li>
+
+                                      <li class="nav-item">
+                                          <a class="nav-link btn btn-warning" data-toggle="tab" href="#tuesday">tuesday</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link btn btn-primary" data-toggle="tab" href="#wednesday">wednesday</a>
+                                          </li>
+
+                                          <li class="nav-item">
+                                              <a class="nav-link btn btn-success" data-toggle="tab" href="#thursday">thursday</a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a class="nav-link btn btn-secondary" data-toggle="tab" href="#friday">friday</a>
+                                              </li>
+                          
+                            
+                          </ul>
+
+
+
+                          <div id="myTabContent" class="tab-content mt-4">
+                            <div class="tab-pane fade active show" id="home">
+                                    <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Full Name</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{object.name}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Initial</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{object.name_initial}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Email</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{object.email}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Phone</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{object.phone}}</p>
+                                            </div>
+                                        </div>
+    
+                                        <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Faculty</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{object.faculty}}</p>
+                                                </div>
+                                            </div>
+                            </div>
+                            <div class="tab-pane fade" id="profile">
+
+                                    <table class="table table-dark table-hover">
+                                            <thead>
+                                              <tr>
+                                                <th>Class Time</th>
+                                                <th>Room No</th>
+                                               
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              {% if routine_time %}
+                                              {% for saturday in routine_time %}
+
+                                             {% if 'saturday' in saturday.routine_days|stringformat:'saturday' %}
+                                              <tr>
+                                                <td>{{saturday.routine_time}}</td>
+                                                <td>{{saturday.room_no}}</td>
+                                                
+                                              </tr>
+                                              {% endif %}
+                                              
+                                             
+
+                                              {% endfor %}
+                                              {% endif %}
+                                            
+                                            
+                                            </tbody>
+                                          </table>
+
+
+                            </div>
+
+
+                            <div class="tab-pane fade" id="sunday">
+
+                                    <table class="table table-dark table-hover">
+                                            <thead>
+                                              <tr>
+                                                <th>Class Time</th>
+                                                <th>Room no</th>
+                                               
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                                {% if routine_time %}
+                                                {% for sunday in routine_time %}
+  
+                                               {% if 'sunday' in sunday.routine_days|stringformat:'sunday' %}
+                                                <tr>
+                                                  <td>{{sunday.routine_time}}</td>
+                                                  <td>{{sunday.room_no}}</td>
+                                                  
+                                                </tr>
+                                                {% endif %}
+                                                
+                                               
+  
+                                                {% endfor %}
+                                                {% endif %}
+                                            </tbody>
+                                          </table>
+
+
+                            </div>
+
+                            <!--ssssss-->
+
+                            <div class="tab-pane fade" id="monday">
+
+                                   
+                                <table class="table table-dark table-hover">
+                                    <thead>
+                                      <tr>
+                                        <th>Class Time</th>
+                                        <th>Room no</th>
+                                       
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% if routine_time %}
+                                        {% for sunday in routine_time %}
+
+                                       {% if 'monday' in sunday.routine_days|stringformat:'sunday' %}
+                                        <tr>
+                                          <td>{{sunday.routine_time}}</td>
+                                          <td>{{sunday.room_no}}</td>
+                                          
+                                        </tr>
+                                        {% endif %}
+                                        
+                                       
+
+                                        {% endfor %}
+                                        {% endif %}
+                                    </tbody>
+                                  </table>
+
+
+                            </div>
+
+                            <!--ssfsdf-->
+
+
+
+                              <!--ssssss-->
+
+                              <div class="tab-pane fade" id="tuesday">
+
+                                   
+                                  <table class="table table-dark table-hover">
+                                      <thead>
+                                        <tr>
+                                          <th>Class Time</th>
+                                          <th>Room no</th>
+                                         
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                          {% if routine_time %}
+                                          {% for tuesday in routine_time %}
+  
+                                         {% if 'tuesday' in tuesday.routine_days|stringformat:'sunday' %}
+                                          <tr>
+                                            <td>{{tuesday.routine_time}}</td>
+                                            <td>{{tuesday.room_no}}</td>
+                                            
+                                          </tr>
+                                          {% endif %}
+                                          
+                                         
+  
+                                          {% endfor %}
+                                          {% endif %}
+                                      </tbody>
+                                    </table>
+  
+  
+                              </div>
+  
+                              <!--ssfsdf-->
+
+
+                                  <!--ssssss-->
+
+                                  <div class="tab-pane fade" id="wednesday">
+
+                                   
+                                      <table class="table table-dark table-hover">
+                                          <thead>
+                                            <tr>
+                                              <th>Class Time</th>
+                                              <th>Room no</th>
+                                             
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                              {% if routine_time %}
+                                              {% for wednesday in routine_time %}
+      
+                                             {% if 'wednesday' in wednesday.routine_days|stringformat:'sunday' %}
+                                              <tr>
+                                                <td>{{wednesday.routine_time}}</td>
+                                                <td>{{wednesday.room_no}}</td>
+                                                
+                                              </tr>
+                                              {% endif %}
+                                              
+                                             
+      
+                                              {% endfor %}
+                                              {% endif %}
+                                          </tbody>
+                                        </table>
+      
+      
+                                  </div>
+      
+                                  <!--ssfsdf-->
+
+
+
+                                  <div class="tab-pane fade" id="thursday">
+
+                                   
+                                      <table class="table table-dark table-hover">
+                                          <thead>
+                                            <tr>
+                                              <th>Class Time</th>
+                                              <th>Room no</th>
+                                             
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                              {% if routine_time %}
+                                              {% for thursday in routine_time %}
+      
+                                             {% if 'thursday' in thursday.routine_days|stringformat:'sunday' %}
+                                              <tr>
+                                                <td>{{thursday.routine_time}}</td>
+                                                <td>{{thursday.room_no}}</td>
+                                                
+                                              </tr>
+                                              {% endif %}
+                                              
+                                             
+      
+                                              {% endfor %}
+                                              {% endif %}
+                                          </tbody>
+                                        </table>
+      
+      
+                                  </div>
+
+
+
+
+
+
+                                  <div class="tab-pane fade" id="friday">
+
+                                   
+                                      <table class="table table-dark table-hover">
+                                          <thead>
+                                            <tr>
+                                              <th>Class Time</th>
+                                              <th>Room no</th>
+                                             
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                              {% if routine_time %}
+                                              {% for friday in routine_time %}
+      
+                                             {% if 'friday' in friday.routine_days|stringformat:'sunday' %}
+                                              <tr>
+                                                <td>{{friday.routine_time}}</td>
+                                                <td>{{friday.room_no}}</td>
+                                                
+                                              </tr>
+                                              {% endif %}
+                                              
+                                             
+      
+                                              {% endfor %}
+                                              {% endif %}
+                                          </tbody>
+                                        </table>
+      
+      
+                                  </div>
+
+
+                          
+                            
+                          </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,138 @@
+
+
+{% extends 'routine_admin/dashboard.html' %}
+
+
+
+{% block content %}
+
+
+
+
+
+
+
+
+
+
+
+          <!-- Page Heading -->
+          <h1 class="h3 mb-2 text-gray-800 text-center">All Teacher Info</h1>
+
+          <p class="text-center">
+                {% include 'partial/_alerts.html' %}
+              </p>
+
+          <p class="text-center">
+            <a href="{% url 'admin_page:admin-teacher-create' %}" class="btn btn-primary text-center mt-2 mb-2">Add new Teacher</a>
+          </p>
+         
+
+          <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">DataTables for Teacher</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered table-striped text-center" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Initial</th>
+                      <th>Department</th>
+                      <th>Image</th>
+                      <th>Designation</th>
+                      <th>Faculty</th>
+                      <th>Email</th>
+                 
+                     
+                      <th></th>
+                  
+                     
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                            <th>Name</th>
+                            <th>Initial</th>
+                            <th>Department</th>
+                            <th>Image</th>
+                            <th>Designation</th>
+                            <th>Faculty</th>
+                       
+                          
+                       
+                        <th></th>
+                      
+                      </tr>
+                    </tr>
+                  </tfoot>
+
+
+                  <tbody>
+
+                    {% for teach in all_teach %}
+
+                    <tr>
+                      <td>{{teach.name}}</td>
+                      <td>{{teach.name_initial}}</td>
+                      <td>{{teach.dept_belong}}</td>
+                      {% if teach.image %}
+                      <td><img src="{{teach.image.url}}" alt="" style="max-width: 100%; height:60px;"></td>
+                      {% else %}
+                      <td>No Image</td>
+                      {% endif %}
+                      <td>{{teach.designation}}</td>
+                      <td>{{teach.faculty}}</td>
+                      
+                   
+                      
+                      <td>
+                          <a href="{{teach.admin_get_absolute_url}}" class="btn btn-success btn-sm">Edit</a>
+                          <a href="{{teach.admin_delete_get_absolute_url}}" class="btn btn-danger btn-sm">Delete</a>
+                      </td>
+
+                      
+                     
+                    </tr>
+                    {% endfor %}
+
+
+
+                  
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+
+
+
+
+
+
+
+
+
+
+
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+          </a>
+        
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
